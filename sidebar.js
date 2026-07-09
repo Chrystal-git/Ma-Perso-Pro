@@ -16,10 +16,10 @@ const MENU_FOOTER = "© 2025 Chrystal Orian VIGAN";
 
 /* ✏️ Liens du menu – ajoute tes pages ici */
 const MENU_ITEMS = [
-  { href: "/pages/home.html",        icon: "🏠", label: "Home"            },
-  { href: "/pages/cv.html",          icon: "📄", label: "Mon CV"          },
-  { href: "/pages/certificats.html", icon: "🥇", label: "Mes Certificats" },
-  { href: "/pages/reseaux.html",     icon: "🌐", label: "Mes Réseaux"     },
+  { href: "home.html",        icon: "🏠", label: "Home"            },
+  { href: "cv.html",          icon: "📄", label: "Mon CV"          },
+  { href: "certificats.html", icon: "🥇", label: "Mes Certificats" },
+  { href: "reseaux.html",     icon: "🌐", label: "Mes Réseaux"     },
   /* ✏️ Exemple pour ajouter une page :
      { href: "projets.html", icon: "🚀", label: "Mes Projets" }, */
 ];
