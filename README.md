@@ -26,12 +26,12 @@ Au-delà de l'aspect portfolio, ce projet me permet de mettre en pratique les bo
 
 Le site comprend les sections suivantes :
 
-- 🏠 **Accueil**
+- 🏠 **Home**
 - 📄 **Mon CV**
 - 📜 **Mes Certifications**
 - 🌐 **Mes Réseaux sociaux**
 
-La page **Accueil** est la page affichée par défaut.
+La page **Home** est la page affichée par défaut.
 
 ---
 
@@ -119,7 +119,7 @@ docker compose up
 Le site sera accessible à l'adresse :
 
 ```
-http://localhost:8080
+https://chrystal-git.github.io/Ma-Perso-Pro/
 ```
 
 ---
@@ -164,7 +164,7 @@ Les prochaines étapes incluent :
 
 ## 👨‍💻 Auteur
 
-**Chrystal**
+**Chrystal Orian VIGAN**
 
 Développeur Full Stack & Data Scientist
 
