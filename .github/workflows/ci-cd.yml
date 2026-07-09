@@ -1,0 +1,83 @@
+name: CI/CD
+
+# Déclenche le pipeline à chaque push et pull request sur main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+
+  # ── 1. LINT & TESTS ─────────────────────────────────────────────────────
+  # Vérifie la qualité du HTML et l'absence de liens internes cassés.
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Lint HTML
+        run: npm run lint:html
+
+      - name: Vérifier les liens internes
+        run: npm run test:links
+
+  # ── 2. BUILD DOCKER (validation) ────────────────────────────────────────
+  # Vérifie que l'image Docker se construit correctement.
+  # C'est un filet de sécurité : si le Dockerfile casse, la CI échoue ici
+  # avant même d'arriver au déploiement.
+  docker-build:
+    needs: lint-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Construire l'image Docker
+        run: docker build -t ma-perso-pro:ci .
+
+      - name: Tester que le conteneur répond bien
+        run: |
+          docker run -d -p 8080:80 --name test-site ma-perso-pro:ci
+          sleep 2
+          curl -sf http://localhost:8080/home.html > /dev/null
+          docker stop test-site
+
+  # ── 3. DÉPLOIEMENT GITHUB PAGES ─────────────────────────────────────────
+  # Ne se déclenche que sur push vers main (jamais sur une pull request),
+  # et seulement si les jobs précédents sont passés.
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: docker-build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Préparer les fichiers pour Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

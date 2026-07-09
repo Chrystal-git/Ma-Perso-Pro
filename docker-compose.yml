@@ -1,0 +1,10 @@
+
+services:
+  site:
+    build: .
+    ports:
+      - "8080:80"
+    # Recharge automatiquement les fichiers modifiés sans reconstruire l'image
+    # (pratique en développement local)
+    volumes:
+      - ./:/usr/share/nginx/html:ro

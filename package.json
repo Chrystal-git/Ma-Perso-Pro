@@ -1,0 +1,17 @@
+{
+  "name": "ma-perso-pro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site personnel de Chrystal Orian VIGAN",
+  "scripts": {
+    "lint:html": "htmlhint \"**/*.html\" --config .htmlhintrc",
+    "test:links": "linkinator . --recurse --skip \"^(?!.*\\.html$).*$\" --format text",
+    "serve": "http-server . -p 8080",
+    "test": "npm run lint:html"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "linkinator": "^6.0.4",
+    "http-server": "^14.1.1"
+  }
+}
