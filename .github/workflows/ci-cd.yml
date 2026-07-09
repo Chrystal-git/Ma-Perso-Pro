@@ -53,7 +53,7 @@ jobs:
         run: |
           docker run -d -p 8080:80 --name test-site ma-perso-pro:ci
           sleep 2
-          curl -sf http://localhost:8080/home.html > /dev/null
+          curl -sf http://localhost:8080/pages/home.html > /dev/null
           docker stop test-site
 
   # ── 3. DÉPLOIEMENT GITHUB PAGES ─────────────────────────────────────────

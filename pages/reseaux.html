@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mes Réseaux – Chrystal Orian VIGAN</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Segoe UI', sans-serif; background-color: #f0f4ff; color: #1a1d2e; }
+    .page-wrapper { display: flex; height: 100vh; overflow: hidden; }
+    .main-content { flex: 1; padding: 2.5rem; overflow-y: auto; }
+
+    .page-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; }
+    .page-subtitle { font-size: 0.9rem; color: #4a5270; margin-bottom: 2rem; }
+
+    /* Grille réseaux */
+    .reseaux-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+
+    /* Carte réseau */
+    .reseau-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 14px rgba(0,0,0,0.07); display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; border-top: 4px solid var(--rc, #7dd3fc); }
+    .reseau-card:hover { transform: translateY(-5px); box-shadow: 0 10px 28px rgba(0,0,0,0.13); }
+
+    /* Aperçu */
+    .reseau-preview { height: 120px; display: flex; align-items: center; justify-content: center; background: var(--rbg, #e8eeff); position: relative; }
+    .reseau-logo { font-size: 3.5rem; line-height: 1;}
+    .reseau-label { position: absolute; bottom: 0.5rem; right: 0.75rem; font-size: 0.72rem; font-weight: 700; color: var(--rc, #3b82f6); letter-spacing: 0.05em; text-transform: uppercase; }
+
+    /* Corps */
+    .reseau-body { padding: 1rem 1.25rem 1.25rem; display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
+    .reseau-body h3 { font-size: 1rem; font-weight: 700; }
+    .handle { font-size: 0.82rem; color: var(--rc, #3b82f6); font-weight: 600; }
+    .reseau-body p { font-size: 0.84rem; color: #4a5270; line-height: 1.55; margin-top: 0.25rem; }
+    .reseau-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.9rem; padding: 0.5rem 1rem; background: var(--rc, #3b82f6); color: #fff; border-radius: 8px; font-size: 0.82rem; font-weight: 600; text-decoration: none; width: fit-content; transition: opacity 0.2s; }
+    .reseau-btn:hover { opacity: 0.85; }
+
+    /* Tablette */
+    @media (max-width: 1024px) {
+      .reseaux-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    }
+    /* Mobile */
+    @media (max-width: 768px) {
+      .main-content { padding: 1.5rem; }
+      .reseaux-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .reseaux-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <main class="main-content">
+    <div class="page-title">🌐 Mes Réseaux Sociaux</div>
+    <p class="page-subtitle">Retrouve-moi sur ces plateformes et connectons-nous !</p>
+
+    <!--
+      ✏️ AJOUTER UN RÉSEAU :
+      1. Copie un bloc <div class="reseau-card"> ... </div>
+      2. Change --rc (couleur) et --rbg (fond pâle)
+      3. Modifie l'emoji, le nom, le pseudo, la description et le lien href
+
+      COULEURS DE RÉFÉRENCE :
+        LinkedIn  : --rc:#0077b5  --rbg:#e8f4fb
+        GitHub    : --rc:#24292e  --rbg:#f0f0f0
+        Instagram : --rc:#e1306c  --rbg:#fce4ec
+        Twitter/X : --rc:#000000  --rbg:#f0f0f0
+        Facebook  : --rc:#1877f2  --rbg:#e8f0fe
+        YouTube   : --rc:#ff0000  --rbg:#fce8e8
+        TikTok    : --rc:#010101  --rbg:#f0f0f0
+        WhatsApp  : --rc:#25d366  --rbg:#e8fdf2
+    -->
+    <div class="reseaux-grid">
+
+      <!-- LinkedIn -->
+      <div class="reseau-card" style="--rc:#0077b5;--rbg:#e8f4fb;">
+        <div class="reseau-preview">
+          <div class="reseau-logo"><img src="/assets/images/LinkedIn.jpeg" alt="linkedin" width="70" height="70" ></div>
+          <span class="reseau-label">LinkedIn</span>
+        </div>
+        <div class="reseau-body">
+          <h3>Chrystal Orian VIGAN</h3>                    <!-- ✏️ Ton nom -->
+          <p class="handle">@chrystal-orian-vigan</p>      <!-- ✏️ Ton pseudo -->
+          <p>Mon profil professionnel : expériences, formations, recommandations et veille tech.</p> <!-- ✏️ -->
+          <a class="reseau-btn" href="https://linkedin.com/in/chrystal-orian-vigan-60b573284" target="_blank">🔗 Visiter</a> <!-- ✏️ -->
+        </div>
+      </div>
+
+      <!-- GitHub -->
+      <div class="reseau-card" style="--rc:#24292e;--rbg:#f0f0f0;">
+        <div class="reseau-preview">
+          <div class="reseau-logo"><img src="/assets/images/Github.jpeg" alt="github" width="70" height="70" ></div>
+          <span class="reseau-label">GitHub</span>
+        </div>
+        <div class="reseau-body">
+          <h3>Chrystal Orian VIGAN</h3>
+          <p class="handle">@chrystal-git</p>
+          <p>Mes projets open source, contributions et dépôts de code.</p>
+          <a class="reseau-btn" href="https://github.com/Chrystal-git" target="_blank">🔗 Voir mes projets</a>
+        </div>
+      </div>
+
+       <!-- Whatsapp -->
+      <div class="reseau-card" style="--rc:#25d366; --rbg:#e8fdf2;">
+        <div class="reseau-preview">
+          <div class="reseau-logo"><img src="/assets/images/whatsapp.png" alt="whatsapp" width="70" height="70" ></div>
+          <span class="reseau-label">Whatsapp</span>
+        </div>
+        <div class="reseau-body">
+          <h3>Chrystal Orian VIGAN</h3>
+          <p class="handle">@Sam Chryst</p>
+          <p>Mon réseau social où je suis le plus souvent active pour les messages.</p>
+          <a class="reseau-btn" href="https://wa.me/qr/OOE62Q3RJLMLC1" target="_blank">🔗 Discussion</a> 
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="reseau-card" style="--rc:#e1306c;--rbg:#fce4ec;">
+        <div class="reseau-preview">
+          <div class="reseau-logo">📸</div>
+          <span class="reseau-label">Instagram</span>
+        </div>
+        <div class="reseau-body">
+          <h3>Chrystal Orian</h3>
+          <p class="handle">@chrystal.orian</p>
+          <p>Ma vie quotidienne, voyages et moments de créativité en photos et stories.</p>
+          <a class="reseau-btn" href="https://instagram.com/TON-PROFIL" target="_blank">🔗 Voir mon Insta</a>
+        </div>
+      </div>
+
+      <!-- Twitter / X -->
+      <div class="reseau-card" style="--rc:#000000;--rbg:#f0f0f0;">
+        <div class="reseau-preview">
+          <div class="reseau-logo">🐦</div>
+          <span class="reseau-label">Twitter / X</span>
+        </div>
+        <div class="reseau-body">
+          <h3>Chrystal Orian</h3>
+          <p class="handle">@chrystal_orian</p>
+          <p>Veille tech, pensées du moment et partages autour du développement et de la data.</p>
+          <a class="reseau-btn" href="https://twitter.com/TON-PROFIL" target="_blank">🔗 Me suivre</a>
+        </div>
+      </div>
+
+      <!-- ✏️ Colle tes prochains réseaux ici -->
+
+    </div>
+  </main>
+</div>
+<script src="/sidebar.js"></script>
+</body>
+</html>
