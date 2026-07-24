@@ -91,7 +91,7 @@ La page **Home** est la page affichée par défaut.
 ### Cloner le projet
 
 ```bash
-git clone https://github.com/Chrystal-git/Ma-Perso-Pro.git
+git clone https://github.com/Chrystal-dev/Ma-Perso-Pro.git
 ```
 
 Accéder au projet :
@@ -119,7 +119,7 @@ docker compose up
 Le site sera accessible à l'adresse :
 
 ```
-https://chrystal-git.github.io/Ma-Perso-Pro/
+https://chrystal-dev.github.io/Ma-Perso-Pro/
 ```
 
 ---
@@ -168,7 +168,7 @@ Les prochaines étapes incluent :
 
 Développeur Full Stack & Data Scientist
 
-- GitHub : https://github.com/Chrystal-git
+- GitHub : https://github.com/Chrystal-dev
 - Portfolio : En cours de développement
 
 ---
